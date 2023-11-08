@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Swiper with Form Validation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add this inside the <head> tag of your HTML document -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+    <header>
+        <h1>Akshit Akshit</h1>
+    </header>
+
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    
+                    <h2>School Information</h2>
+                    <form id="myForm" action="#" method="post">
+                        <div>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required minlength="6">
+                        </div>
+                        <div>
+                            <label for="phone">Phone (US format):</label>
+                            <input type="text" id="phone" name="phone" pattern="^\d{3}-\d{3}-\d{4}$"
+                                placeholder="123-456-7890" oninvalid="this.setCustomValidity('Please enter a valid US phone number (e.g., 123-456-7890)')"
+                                oninput="this.setCustomValidity('')">
+                        </div>
+                        
+                            <input type="submit" value="Submit">
+                        
+                    </form>
+                </div>
+
+                  <!-- Personal Information Section -->
+<div class="swiper-slide">
+    <h2>Personal Information</h2>
+    <form id="personalForm">
+        <!-- Email -->
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                oninvalid="this.setCustomValidity('Please enter a valid email address')"
+                oninput="this.setCustomValidity('')">
+        </div>
+
+        <!-- Phone Number -->
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="123-456-7890"
+                oninvalid="this.setCustomValidity('Please enter a valid US phone number (e.g., 123-456-7890)')"
+                oninput="this.setCustomValidity('')">
+        </div>
+
+        <!-- Zip code -->
+        <div>
+            <label for="zipCode">Zip code (Canada):</label>
+            <input type="text" id="zipCode" name="zipCode" required
+                pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d"
+                placeholder="A1A 1A1"
+                oninvalid="this.setCustomValidity('Please enter a valid Canada zip code (e.g., A1A 1A1)')"
+                oninput="this.setCustomValidity('')">
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+                
+              <!-- Payment Information Section -->
+    <div class="swiper-slide">
+        <h2>Payment Information</h2>
+        <form id="paymentForm">
+            <!-- Credit Card Number -->
+            <div>
+                <label for="creditCard">Credit Card Number:</label>
+                <input type="text" id="creditCard" name="creditCard" required
+                    pattern="[0-9]{10}" placeholder="1234567890">
+            </div>
+
+            <!-- Expiration Date -->
+            <div>
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="date" id="expirationDate" name="expirationDate" required>
+            </div>
+
+            <!-- CVV -->
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required pattern="[0-9]{3}" placeholder="123">
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright 2023 | AKSHIT</p>
+    </footer>
+
+
+      <!-- Include jQuery and jQuery Validation libraries -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+   
+</body>
+
+</html>
